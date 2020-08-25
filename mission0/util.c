@@ -93,6 +93,7 @@ char readGender() {
       break;
     } else if (gender == 'm' || gender == 'f') {
       gender -= 'a' - 'A';
+      break;
     } else if (gender == '\n') {
       // Avoid printing the validation message twice.
       // Needed because terminals usually buffer the input until the enter
