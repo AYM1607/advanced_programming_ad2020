@@ -6,7 +6,7 @@
 #include "common.h"
 #include "util.h"
 
-const unsigned int NamesBuffSize = 64;
+#define NamesBuffSize 64
 
 /**
  * readString
@@ -18,7 +18,7 @@ void readString(char *buffer, unsigned int buffSize) {
   fflush(stdin);
   // Read until a valid string is read.
   while (fgets(buffer, buffSize, stdin) == NULL || (*buffer) == '\n') {
-    printf("Please introduce a valid string and keep it under 64 characters\n");
+    printf("Please introduce a valid string and keep\n");
     // Ignore extra input in the next run if the string was longer than
     // expected.
     fflush(stdin);
@@ -244,4 +244,129 @@ char *readMission() {
   } while (!validateMissionId(buffer));
 
   return buffer;
+}
+
+/**
+ * readAgent
+ *
+ * Prompts the user for all the information realted to an agent.
+ * Stores it in an Agent struct and returns a pointer to it.
+ */
+struct Agent *readAgent() {
+  struct Agent *newAgent = (struct Agent *)malloc(sizeof(struct Agent));
+
+  newAgent->name = readName();
+  newAgent->lastName = readLastName();
+  newAgent->age = readAge();
+  newAgent->gender = readGender();
+  newAgent->mission = readMission();
+  newAgent->assignedAssets = readAssets();
+
+  return newAgent;
+}
+
+/**
+ * printAgent
+ *
+ * Pretty prints the provided agent on the console.
+ */
+void printAgent(struct Agent *agent) {
+  printf("Agent's name is: %s %s\n", agent->name, agent->lastName);
+  printf("Age: %d, Gender: %c\n", agent->age, agent->gender);
+  printf("Mission: %s\n", agent->mission);
+  printf("Assets: ");
+
+  // Deal with the assets.
+  BOOL isFirst = TRUE;
+  struct AssetListNode *currentAsset = agent->assignedAssets;
+  while (currentAsset != NULL) {
+    if (isFirst) {
+      isFirst = FALSE;
+    } else {
+      printf(", ");
+    }
+    printf("%s", currentAsset->assetId);
+    currentAsset = currentAsset->next;
+  }
+  printf("\n");
+}
+
+/**
+ * printAgents
+ * Pretty prints all the agents in the provided list.
+ */
+void printAgents(struct Agent *agentsList) {
+  if (agentsList == NULL) {
+    printf("\nOops, no agents in the system yet\n\n");
+    return;
+  }
+
+  struct Agent *currentAgent = agentsList;
+  int agentPosition = 0;
+
+  while (currentAgent != NULL) {
+    printf("---------------------------------- Position %d\n", agentPosition);
+    printAgent(currentAgent);
+    currentAgent = currentAgent->next;
+    agentPosition++;
+  }
+  printf("----------------------------------------------\n");
+}
+
+/**
+ * addAgentToList
+ *
+ * Adds the provided agent at the end of the provided lsit.
+ */
+enum ReturnCode addAgentToList(struct Agent *head, struct Agent *newAgent) {
+  // Error case.
+  if (head == NULL) {
+    return NULL_LIST;
+  }
+
+  struct Agent *currentAgent = head;
+
+  while (currentAgent->next != NULL) {
+    currentAgent = currentAgent->next;
+  }
+
+  currentAgent->next = newAgent;
+
+  return SUCCESS;
+}
+
+/**
+ * addAssetsToAgent
+ *
+ * Adds assets to the agent in the provided
+ * position in the list.
+ */
+enum ReturnCode addAssetsToAgent(struct Agent *agentsList, int position) {
+  if (agentsList == NULL) {
+    return NULL_LIST;
+  } else if (position < 0) {
+    return OUT_OF_BOUNDS;
+  }
+
+  int currentPosition = 0;
+  struct Agent *currentAgent = agentsList;
+
+  while (position != currentPosition) {
+    currentPosition++;
+    if (currentAgent == NULL) {
+      return OUT_OF_BOUNDS;
+    }
+    currentAgent = currentAgent->next;
+  }
+
+  struct AssetListNode *newAssets = readAssets();
+  struct AssetListNode *currentAsset = currentAgent->assignedAssets;
+
+  while (currentAsset->next != NULL) {
+    currentAsset = currentAsset->next;
+  }
+
+  currentAsset->next = newAssets;
+
+  return SUCCESS;
 }

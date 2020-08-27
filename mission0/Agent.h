@@ -10,5 +10,6 @@ struct Agent {
   char gender;
   struct AssetListNode *assignedAssets;
   char *mission;
+  struct Agent *next;
 };
 
