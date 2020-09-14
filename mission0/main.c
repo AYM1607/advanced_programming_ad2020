@@ -15,6 +15,8 @@ int main() {
            "a) Print the agents in the system.\n"
            "b) Add a new agent.\n"
            "c) Add assets to an agent.\n"
+           "d) Dump current structure to encrypted file.\n"
+           "e) Load from encrypted.\n"
            "q) Exit.\n");
     option = getchar();
     // Flush the extra enter.
@@ -41,6 +43,19 @@ int main() {
       } else if (code == OUT_OF_BOUNDS) {
         printf("\nOops, make sure the provided position is valid.\n\n");
       }
+      break;
+    case 'd':
+      printf("Dumping info to file...\n\n");
+      dumpEncryptedFile(head);
+      printf("content dumped\n\n");
+      break;
+    case 'e':
+      if (head == NULL) {
+        head = loadEncryptedFile();
+      } else {
+        addAgentToList(head, loadEncryptedFile());
+      }
+      printf("Done loading!\n");
       break;
     case 'q':
       // Do nothing.

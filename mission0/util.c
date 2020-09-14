@@ -6,7 +6,11 @@
 #include "common.h"
 #include "util.h"
 
-#define NamesBuffSize 64
+const int MaxBuffSize = 64;
+const int AssetBuffSize = 15;
+const int MissionBuffSize = 14;
+const int AgeBuffSize = 10;
+const int GenderBuffSize = 3;
 
 /**
  * readString
@@ -35,11 +39,11 @@ void readString(char *buffer, unsigned int buffSize) {
  */
 char *readName() {
   // Assume that the name will be 64 characters or smaller.
-  char *buffer = (char *)malloc(NamesBuffSize * sizeof(char));
+  char *buffer = (char *)malloc(MaxBuffSize * sizeof(char));
 
   printf("Write the agent's first name\n");
 
-  readString(buffer, NamesBuffSize);
+  readString(buffer, MaxBuffSize);
 
   return buffer;
 }
@@ -51,11 +55,11 @@ char *readName() {
  */
 char *readLastName() {
   // Assume that the last name will be 64 characters or smaller.
-  char *buffer = (char *)malloc(NamesBuffSize * sizeof(char));
+  char *buffer = (char *)malloc(MaxBuffSize * sizeof(char));
 
   printf("Write the agent's last name\n");
 
-  readString(buffer, NamesBuffSize);
+  readString(buffer, MaxBuffSize);
 
   return buffer;
 }
@@ -369,4 +373,195 @@ enum ReturnCode addAssetsToAgent(struct Agent *agentsList, int position) {
   currentAsset->next = newAssets;
 
   return SUCCESS;
+}
+
+void crypt(char *string, BOOL encrypt) {
+  // Asumes that the string will be a maximum of "MaxBuffSize" in lenght.
+  const unsigned char cipherNumber = 12;
+  int i = 0;
+
+  for (; i < MaxBuffSize && string[i] != '\0'; i++) {
+
+    string[i] += encrypt ? cipherNumber : -cipherNumber;
+  }
+}
+
+void dumpEncryptedAgent(FILE *fp, struct Agent *agent) {
+  char *buffer = (char *)malloc(MaxBuffSize * sizeof(char));
+
+  // Dump first name.
+  strcpy(buffer, agent->name);
+  crypt(buffer, TRUE);
+  fprintf(fp, "%s\n", buffer);
+  // Dump last name.
+  strcpy(buffer, agent->lastName);
+  crypt(buffer, TRUE);
+  fprintf(fp, "%s\n", buffer);
+  // Dump age.
+  sprintf(buffer, "%d", agent->age);
+  crypt(buffer, TRUE);
+  fprintf(fp, "%s\n", buffer);
+  // Dump gender.
+  sprintf(buffer, "%c", agent->gender);
+  crypt(buffer, TRUE);
+  fprintf(fp, "%s\n", buffer);
+  // Dump mission.
+  strcpy(buffer, agent->mission);
+  crypt(buffer, TRUE);
+  fprintf(fp, "%s\n", buffer);
+
+  // Dump assets.
+  struct AssetListNode *currentAsset = agent->assignedAssets;
+  while (currentAsset != NULL) {
+    strcpy(buffer, currentAsset->assetId);
+    crypt(buffer, TRUE);
+    fprintf(fp, "%s\n", buffer);
+    currentAsset = currentAsset->next;
+  }
+  free(buffer);
+}
+
+/**
+ * dumpEncryptedFile
+ *
+ * dumps all the current information into an encrypted file
+ */
+enum ReturnCode dumpEncryptedFile(struct Agent *agentsList) {
+  char buffer[32];
+
+  if (agentsList == NULL) {
+    printf("\nOops, no agents in the system yet\n\n");
+    return NULL_LIST;
+  }
+
+  FILE *fp = fopen("./EncryptedData.txt", "w");
+  if (fp == NULL) {
+    return COULD_NOT_OPEN_FILE;
+  }
+
+  struct Agent *currentAgent = agentsList;
+  int agentPosition = 0;
+
+  while (currentAgent != NULL) {
+    dumpEncryptedAgent(fp, currentAgent);
+    currentAgent = currentAgent->next;
+    if (currentAgent != NULL) {
+      strcpy(buffer, "AgentEnd");
+      crypt(buffer, TRUE);
+      fprintf(fp, "%s\n", buffer);
+    }
+    agentPosition++;
+  }
+  strcpy(buffer, "FileEnd");
+  crypt(buffer, TRUE);
+  fprintf(fp, "%s\n", buffer);
+
+  fclose(fp);
+
+  return SUCCESS;
+}
+
+/**
+ * readFileLine
+ *
+ * Reads a single line from the provided file pointer and stores it in
+ * buffer.
+ * Return TRUE if the line was read successfully and FALSE otherwhise.
+ */
+BOOL readFileLine(char *buffer, unsigned int buffSize, FILE *stream) {
+  // Make sure the stdin buffer is clean.
+  fflush(stream);
+
+  if (fgets(buffer, buffSize, stream) == NULL) {
+    return FALSE;
+  }
+
+  // Delete the trailing newline character left by fgets.
+  buffer[strcspn(buffer, "\n")] = 0;
+
+  return TRUE;
+}
+/**
+ * loadEncryptedFile
+ *
+ * Returns a pointer to a linked list of the agents read from the file.
+ * Returns NULL if th file doesn't exist.
+ */
+struct Agent *loadEncryptedFile() {
+  FILE *fp = fopen("./EncryptedData.txt", "r");
+  if (fp == NULL) {
+    return NULL;
+  }
+
+  BOOL done = FALSE;
+  struct Agent *head = NULL;
+  struct Agent *current = NULL;
+
+  while (done == FALSE) {
+    struct Agent *newAgent = (struct Agent *)malloc(sizeof(struct Agent));
+    // Name
+    char *nameBuff = (char *)malloc(MaxBuffSize * sizeof(char));
+    readFileLine(nameBuff, MaxBuffSize, fp);
+    crypt(nameBuff, FALSE);
+    newAgent->name = nameBuff;
+    // Last name
+    char *lastNameBuff = (char *)malloc(MaxBuffSize * sizeof(char));
+    readFileLine(lastNameBuff, MaxBuffSize, fp);
+    crypt(lastNameBuff, FALSE);
+    newAgent->lastName = lastNameBuff;
+    // Age
+    char *ageBuff = (char *)malloc(AgeBuffSize * sizeof(char));
+    readFileLine(ageBuff, AgeBuffSize, fp);
+    crypt(ageBuff, FALSE);
+    newAgent->age = atoi(ageBuff);
+    // Gender
+    char *genderBuff = (char *)malloc(GenderBuffSize * sizeof(char));
+    readFileLine(genderBuff, GenderBuffSize, fp);
+    crypt(genderBuff, FALSE);
+    newAgent->gender = genderBuff[0];
+    // Misison
+    char *missionBuff = (char *)malloc(MissionBuffSize * sizeof(char));
+    readFileLine(missionBuff, MissionBuffSize, fp);
+    crypt(missionBuff, FALSE);
+    newAgent->mission = missionBuff;
+    // Assets
+    struct AssetListNode *assetsHead = NULL;
+    struct AssetListNode *currentAsset = NULL;
+    while (TRUE) {
+      struct AssetListNode *newAsset =
+          (struct AssetListNode *)malloc(sizeof(struct AssetListNode));
+
+      char *assetBuff = (char *)malloc(AssetBuffSize * sizeof(char));
+      readFileLine(assetBuff, AssetBuffSize, fp);
+      crypt(assetBuff, FALSE);
+
+      if (strcmp(assetBuff, "AgentEnd") == 0) {
+        break;
+      } else if (strcmp(assetBuff, "FileEnd") == 0) {
+        done = TRUE;
+        break;
+      }
+
+      newAsset->assetId = assetBuff;
+      newAsset->next = NULL;
+
+      if (assetsHead == NULL) {
+        assetsHead = newAsset;
+        currentAsset = newAsset;
+      } else {
+        currentAsset->next = newAsset;
+        currentAsset = newAsset;
+      }
+    }
+    newAgent->assignedAssets = assetsHead;
+
+    if (head == NULL) {
+      head = newAgent;
+      current = newAgent;
+    } else {
+      current->next = newAgent;
+      current = newAgent;
+    }
+  }
+  return head;
 }
