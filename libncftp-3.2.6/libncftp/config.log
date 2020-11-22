@@ -1,0 +1,1321 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:618: checking if you set and exported the environment variable CC
+configure:625: checking for environment variable CFLAGS
+configure:632: checking for environment variable CPPFLAGS
+configure:635: checking for environment variable LDFLAGS
+configure:638: checking for environment variable LIBS
+configure:1091: checking platform
+configure:1097: checking for gcc
+configure:1210: checking whether the C compiler (gcc  ) works
+configure:1226: gcc -o conftest    conftest.c  1>&5
+configure:1223:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main(){return(0);}
+^
+1 warning generated.
+configure:1252: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:1257: checking whether we are using GNU C
+configure:1266: gcc -E conftest.c
+configure:1285: checking whether gcc accepts -g
+configure:1318: checking if the C compiler can use precompiled headers
+configure:1473: checking how to run the C preprocessor
+configure:1494: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2750: checking the version of GCC
+configure:2814: checking if we should customize your CFLAGS environment variable
+configure:3062: gcc -c -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k  conftest.c 1>&5
+configure:3058:5: warning: unused variable 'junk' [-Wunused-variable]
+int junk;
+    ^
+1 warning generated.
+configure:3080: checking for ldd
+configure:3149: checking if compiled programs use a shared library version of libgcc
+configure:3198: gcc -o conftest -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k -static-libgcc   conftest.c  1>&5
+clang: error: unsupported option '-static-libgcc'
+configure: failed program was:
+#line 3188 "configure"
+#include "confdefs.h"
+
+#include <stdio.h>
+char testvar[64];
+
+int main() {
+strncpy(testvar, "hello world", sizeof(testvar) - 1);
+; return 0; }
+configure:3279: checking if this is a debug build
+configure:3351: checking for unistd.h
+configure:3361: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:3390: checking size of st_size field in struct stat
+configure:3435: gcc -o conftest -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:3419:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^
+1 warning generated.
+configure:3471: checking size of off_t
+configure:3516: gcc -o conftest -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:3500:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^
+1 warning generated.
+configure:3552: checking size of size_t
+configure:3597: gcc -o conftest -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:3581:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^
+1 warning generated.
+configure:4223: checking if we should add CFLAGS for Large File Support
+configure:4255: checking if we should add CFLAGS for reentrancy
+configure:4265: checking if MACOSX_DEPLOYMENT_TARGET environment variable is set
+configure:4293: checking if Mac OS X universal SDK is available
+configure:4347: checking if we should add CFLAGS for Mac OS X
+configure:4353: checking for strip
+configure:4407: checking for object suffix
+configure:4435: checking for Cygwin environment
+configure:4451: gcc -c -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k  conftest.c 1>&5
+configure:4445:9: warning: macro name is a reserved identifier [-Wreserved-id-macro]
+#define __CYGWIN__ __CYGWIN32__
+        ^
+configure:4447:8: error: use of undeclared identifier '__CYGWIN32__'
+return __CYGWIN__;
+       ^
+configure:4445:20: note: expanded from macro '__CYGWIN__'
+#define __CYGWIN__ __CYGWIN32__
+                   ^
+1 warning and 1 error generated.
+configure: failed program was:
+#line 4440 "configure"
+#include "confdefs.h"
+
+int main() {
+
+#ifndef __CYGWIN__
+#define __CYGWIN__ __CYGWIN32__
+#endif
+return __CYGWIN__;
+; return 0; }
+configure:4468: checking for mingw32 environment
+configure:4480: gcc -c -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k  conftest.c 1>&5
+configure:4476:8: error: use of undeclared identifier '__MINGW32__'
+return __MINGW32__;
+       ^
+1 error generated.
+configure: failed program was:
+#line 4473 "configure"
+#include "confdefs.h"
+
+int main() {
+return __MINGW32__;
+; return 0; }
+configure:4499: checking for executable suffix
+configure:4546: checking for ANSI C header files
+configure:4559: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4626: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:4621:67: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+if (XOR (islower (i), ISLOWER (i)) || toupper (i) != TOUPPER (i)) exit(2);
+                                                                  ^
+configure:4621:67: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+1 warning generated.
+configure:4653: checking for arpa/nameser.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4653: checking for gnu/libc-version.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4659:10: fatal error: 'gnu/libc-version.h' file not found
+#include <gnu/libc-version.h>
+         ^~~~~~~~~~~~~~~~~~~~
+1 error generated.
+configure: failed program was:
+#line 4658 "configure"
+#include "confdefs.h"
+#include <gnu/libc-version.h>
+configure:4653: checking for nserve.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4659:10: fatal error: 'nserve.h' file not found
+#include <nserve.h>
+         ^~~~~~~~~~
+1 error generated.
+configure: failed program was:
+#line 4658 "configure"
+#include "confdefs.h"
+#include <nserve.h>
+configure:4653: checking for resolv.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4653: checking for strings.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4653: checking for sys/sendfile.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4659:10: fatal error: 'sys/sendfile.h' file not found
+#include <sys/sendfile.h>
+         ^~~~~~~~~~~~~~~~
+1 error generated.
+configure: failed program was:
+#line 4658 "configure"
+#include "confdefs.h"
+#include <sys/sendfile.h>
+configure:4653: checking for sys/time.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4653: checking for sys/utsname.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4653: checking for sys/systeminfo.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4659:10: fatal error: 'sys/systeminfo.h' file not found
+#include <sys/systeminfo.h>
+         ^~~~~~~~~~~~~~~~~~
+1 error generated.
+configure: failed program was:
+#line 4658 "configure"
+#include "confdefs.h"
+#include <sys/systeminfo.h>
+configure:4653: checking for termios.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4653: checking for time.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4653: checking for unistd.h
+configure:4653: checking for utime.h
+configure:4663: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:4690: checking whether time.h and sys/time.h may both be included
+configure:4704: gcc -c -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k  conftest.c 1>&5
+configure:4700:12: warning: unused variable 'tp' [-Wunused-variable]
+struct tm *tp;
+           ^
+1 warning generated.
+configure:4726: checking for struct cmsghdr
+configure:4753: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:4748:1: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+exit(((int) &cm.cmsg_type) & 0xff);     /* bogus code, of course. */
+^
+configure:4748:1: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+configure:4750:10: warning: 'return' will never be executed [-Wunreachable-code-return]
+; return 0; }
+         ^
+2 warnings generated.
+configure:4779: checking for msg_control field in struct msghdr
+configure:4805: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:4800:1: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+exit(((int) &m.msg_control) & 0xff);    /* bogus code, of course. */
+^
+configure:4800:1: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+configure:4802:10: warning: 'return' will never be executed [-Wunreachable-code-return]
+; return 0; }
+         ^
+2 warnings generated.
+configure:4831: checking for msg_accrights field in struct msghdr
+configure:4857: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:4850:3: error: no member named 'msg_accrights' in 'struct msghdr'
+m.msg_accrights = &m;
+~ ^
+configure:4851:3: error: no member named 'msg_accrightslen' in 'struct msghdr'
+m.msg_accrightslen = sizeof(m);
+~ ^
+configure:4852:1: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+exit(((int) &m.msg_accrights) & 0xff);  /* bogus code, of course. */
+^
+configure:4852:1: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+configure:4852:16: error: no member named 'msg_accrights' in 'struct msghdr'
+exit(((int) &m.msg_accrights) & 0xff);  /* bogus code, of course. */
+             ~ ^
+1 warning and 3 errors generated.
+configure: failed program was:
+#line 4837 "configure"
+#include "confdefs.h"
+
+	/* includes */
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/socket.h>
+#include <sys/un.h>
+
+int main() {
+
+struct msghdr m;
+
+m.msg_accrights = &m;
+m.msg_accrightslen = sizeof(m);
+exit(((int) &m.msg_accrights) & 0xff);	/* bogus code, of course. */
+
+; return 0; }
+configure:4897: checking for sys/time.h
+configure:4991: checking for sys/un.h
+configure:5001: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:5028: checking for UNIX domain sockets
+configure:5067: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:5055:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^
+configure:5061:3: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+                exit(1);                /* do not have UNIX domain sockets */
+                ^
+configure:5061:3: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+2 warnings generated.
+configure:5101: checking for sun_len field in struct sockaddr_un
+configure:5126: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:5120:17: warning: implicitly declaring library function 'strlen' with type 'unsigned long (const char *)' [-Wimplicit-function-declaration]
+uaddr.sun_len = strlen("/tmp/test.sock");
+                ^
+configure:5120:17: note: include the header <string.h> or explicitly provide a declaration for 'strlen'
+configure:5121:1: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+exit(((int) uaddr.sun_len);     /* bogus code, of course. */
+^
+configure:5121:1: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+configure:5121:27: error: expected ')'
+exit(((int) uaddr.sun_len);     /* bogus code, of course. */
+                          ^
+configure:5121:5: note: to match this '('
+exit(((int) uaddr.sun_len);     /* bogus code, of course. */
+    ^
+2 warnings and 1 error generated.
+configure: failed program was:
+#line 5107 "configure"
+#include "confdefs.h"
+
+	/* includes */
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/socket.h>
+#include <sys/un.h>
+
+int main() {
+
+struct sockaddr_un uaddr;
+
+uaddr.sun_len = strlen("/tmp/test.sock");
+exit(((int) uaddr.sun_len);	/* bogus code, of course. */
+
+; return 0; }
+configure:5171: checking for strerror
+configure:5199: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:5183:14: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char strerror();
+             ^
+              void
+configure:5183:6: warning: incompatible redeclaration of library function 'strerror' [-Wincompatible-library-redeclaration]
+char strerror();
+     ^
+configure:5183:6: note: 'strerror' is a builtin with type 'char *(int)'
+2 warnings generated.
+configure:5273: checking for socket
+configure:5301: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:5285:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char socket();
+           ^
+            void
+1 warning generated.
+configure:5555: checking for gethostbyname
+configure:5583: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:5567:19: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char gethostbyname();
+                  ^
+                   void
+1 warning generated.
+configure:5661: checking if we need to look for a separate DNS resolver library
+configure:5706: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:5692:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^
+configure:5700:4: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+                        exit(1);
+                        ^
+configure:5700:4: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+2 warnings generated.
+configure:6120: checking if SOCKS5 will be used
+configure:6386: checking for working const
+configure:6440: gcc -c -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k  conftest.c 1>&5
+configure:6410:14: warning: cast from 'const char *const *' to 'char **' drops const qualifier [-Wcast-qual]
+p = (char**) ccp;
+             ^
+configure:6414:15: warning: unused variable 's' [-Wunused-variable]
+  char const *s = 0 ? (char *) 0 : (char const *) 0;
+              ^
+configure:6419:7: warning: declaration shadows a local variable [-Wshadow]
+  int x[] = {25, 17};
+      ^
+configure:6396:39: note: previous declaration is here
+typedef int charset[2]; const charset x;
+                                      ^
+configure:6425:8: warning: declaration shadows a local variable [-Wshadow]
+  iptr p = 0;
+       ^
+configure:6399:8: note: previous declaration is here
+char **p;
+       ^
+configure:6434:13: warning: unused variable 'foo' [-Wunused-variable]
+  const int foo = 10;
+            ^
+configure:6396:39: warning: unused variable 'x' [-Wunused-variable]
+typedef int charset[2]; const charset x;
+                                      ^
+configure:6402:27: warning: unused variable 'zero' [-Wunused-variable]
+static struct point const zero = {0,0};
+                          ^
+configure:6414:32: warning: code will never be executed [-Wunreachable-code]
+  char const *s = 0 ? (char *) 0 : (char const *) 0;
+                               ^
+configure:6414:19: note: silence by adding parentheses to mark code as explicitly dead
+  char const *s = 0 ? (char *) 0 : (char const *) 0;
+                  ^
+                  /* DISABLES CODE */ ( )
+configure:6416:4: warning: variable 't' is uninitialized when used here [-Wuninitialized]
+  *t++ = 0;
+   ^
+configure:6413:10: note: initialize the variable 't' to silence this warning
+  char *t;
+         ^
+          = 0
+configure:6431:16: warning: variable 'b' is uninitialized when used here [-Wuninitialized]
+  struct s *b; b->j = 5;
+               ^
+configure:6431:14: note: initialize the variable 'b' to silence this warning
+  struct s *b; b->j = 5;
+             ^
+              = 0
+configure:6430:32: warning: padding struct 'struct s' with 4 bytes to align 'ap' [-Wpadded]
+  struct s { int j; const int *ap[3]; };
+                               ^
+11 warnings generated.
+configure:6461: checking for size_t
+configure:6494: checking for off_t
+configure:6527: checking for mode_t
+configure:6560: checking for pid_t
+configure:6593: checking for uid_t in sys/types.h
+configure:6628: checking for useable _res global variable
+configure:6657: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:6652:14: warning: implicitly declaring library function 'strlen' with type 'unsigned long (const char *)' [-Wimplicit-function-declaration]
+        len = (int) strlen(_res.defdname);
+                    ^
+configure:6652:14: note: include the header <string.h> or explicitly provide a declaration for 'strlen'
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_res_9_init", referenced from:
+      _main in conftest-469580.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 6630 "configure"
+#include "confdefs.h"
+
+	/* includes */
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#ifdef HAVE_ARPA_NAMESER_H
+#	include <arpa/nameser.h>
+#endif
+#ifdef HAVE_RESOLV_H
+#	include <resolv.h>
+#endif
+
+int main() {
+
+	/* function-body */
+	int len;
+
+	res_init();
+	len = (int) strlen(_res.defdname);
+
+; return 0; }
+configure:6684: checking for 64-bit integral type: long long
+configure:6723: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:6709:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^
+configure:6716:3: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+                exit(1);
+                ^
+configure:6716:3: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+2 warnings generated.
+configure:6749: checking how to print a 64-bit integral type
+configure:6789: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:6774:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^
+1 warning generated.
+configure:6878: checking how to scan a 64-bit integral type
+configure:6921: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:6903:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^
+1 warning generated.
+configure:7014: checking if everything was available to use the 64-bit integral type
+configure:7093: checking what type the tv_sec field of struct timeval is
+configure:7194: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:7141:23: warning: unused parameter 'argv' [-Wunused-parameter]
+main(int argc, char **argv)
+                      ^
+1 warning generated.
+configure:7228: checking what type the tv_usec field of struct timeval is
+configure:7255: checking what type main() should return
+configure:7276: checking for negative_control_t
+configure:7314: checking for ssize_t
+configure:7352: checking for sa_family_t
+configure:7397: checking for perl
+configure:7435: checking for mktemp
+configure:7480: checking for return type from write
+configure:7791: checking for size parameter to write
+configure:7794: checking for return type from send
+configure:7797: checking for size parameter to send
+configure:7800: checking for size parameter to connect
+configure:7803: checking for size parameter to setsockopt
+configure:7806: checking for backlog parameter to listen
+configure:7809: checking for seconds parameter to alarm
+configure:7812: checking for address parameter to gethostbyaddr
+configure:7815: checking for size parameter to gethostname
+configure:7965: checking types of arguments for select()
+configure:7998: gcc -c -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k  conftest.c 1>&5
+configure:7992:8: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+extern select (int,fd_set *,fd_set *,fd_set *,struct timeval *);
+~~~~~~ ^
+1 warning generated.
+configure:8039: checking for struct stat64
+configure:8091: checking for sig_atomic_t
+configure:8118: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8115:10: warning: 'return' will never be executed [-Wunreachable-code-return]
+; return 0; }
+         ^
+1 warning generated.
+configure:8206: checking for getcwd
+configure:8234: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8218:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char getcwd();
+           ^
+            void
+1 warning generated.
+configure:8206: checking for getwd
+configure:8234: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8218:11: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char getwd();
+          ^
+           void
+1 warning generated.
+configure:8272: checking for fstat64
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:13: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char fstat64();
+            ^
+             void
+1 warning generated.
+configure:8272: checking for getdomainname
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:19: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char getdomainname();
+                  ^
+                   void
+1 warning generated.
+configure:8272: checking for gethostname
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:17: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char gethostname();
+                ^
+                 void
+1 warning generated.
+configure:8272: checking for getpass
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:13: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char getpass();
+            ^
+             void
+1 warning generated.
+configure:8272: checking for getpassphrase
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:19: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char getpassphrase();
+                  ^
+                   void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_getpassphrase", referenced from:
+      _main in conftest-61e916.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8277 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char getpassphrase(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getpassphrase();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_getpassphrase) || defined (__stub___getpassphrase)
+choke me
+#else
+getpassphrase();
+#endif
+
+; return 0; }
+configure:8272: checking for gnu_get_libc_release
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:26: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char gnu_get_libc_release();
+                         ^
+                          void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_gnu_get_libc_release", referenced from:
+      _main in conftest-c2daeb.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8277 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char gnu_get_libc_release(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char gnu_get_libc_release();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_gnu_get_libc_release) || defined (__stub___gnu_get_libc_release)
+choke me
+#else
+gnu_get_libc_release();
+#endif
+
+; return 0; }
+configure:8272: checking for gnu_get_libc_version
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:26: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char gnu_get_libc_version();
+                         ^
+                          void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_gnu_get_libc_version", referenced from:
+      _main in conftest-f8180b.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8277 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char gnu_get_libc_version(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char gnu_get_libc_version();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_gnu_get_libc_version) || defined (__stub___gnu_get_libc_version)
+choke me
+#else
+gnu_get_libc_version();
+#endif
+
+; return 0; }
+configure:8272: checking for inet_ntop
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:15: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char inet_ntop();
+              ^
+               void
+1 warning generated.
+configure:8272: checking for llseek
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char llseek();
+           ^
+            void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_llseek", referenced from:
+      _main in conftest-745f40.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8277 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char llseek(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char llseek();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_llseek) || defined (__stub___llseek)
+choke me
+#else
+llseek();
+#endif
+
+; return 0; }
+configure:8272: checking for lseek64
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:13: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char lseek64();
+            ^
+             void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_lseek64", referenced from:
+      _main in conftest-12543a.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8277 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char lseek64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char lseek64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_lseek64) || defined (__stub___lseek64)
+choke me
+#else
+lseek64();
+#endif
+
+; return 0; }
+configure:8272: checking for lstat64
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:13: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char lstat64();
+            ^
+             void
+1 warning generated.
+configure:8272: checking for mktime
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char mktime();
+           ^
+            void
+1 warning generated.
+configure:8272: checking for pathconf
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:14: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char pathconf();
+             ^
+              void
+1 warning generated.
+configure:8272: checking for open64
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char open64();
+           ^
+            void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_open64", referenced from:
+      _main in conftest-eb6d81.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8277 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char open64(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char open64();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_open64) || defined (__stub___open64)
+choke me
+#else
+open64();
+#endif
+
+; return 0; }
+configure:8272: checking for readlink
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:14: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char readlink();
+             ^
+              void
+1 warning generated.
+configure:8272: checking for recvfile
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:14: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char recvfile();
+             ^
+              void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_recvfile", referenced from:
+      _main in conftest-a04a2c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8277 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char recvfile(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char recvfile();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_recvfile) || defined (__stub___recvfile)
+choke me
+#else
+recvfile();
+#endif
+
+; return 0; }
+configure:8272: checking for recvmsg
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:13: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char recvmsg();
+            ^
+             void
+1 warning generated.
+configure:8272: checking for res_init
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:14: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char res_init();
+             ^
+              void
+1 warning generated.
+configure:8272: checking for sendfile
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:14: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char sendfile();
+             ^
+              void
+1 warning generated.
+configure:8272: checking for sigaction
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:15: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char sigaction();
+              ^
+               void
+1 warning generated.
+configure:8272: checking for socket
+configure:8272: checking for stat64
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char stat64();
+           ^
+            void
+1 warning generated.
+configure:8272: checking for strcasecmp
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:16: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char strcasecmp();
+               ^
+                void
+configure:8284:6: warning: incompatible redeclaration of library function 'strcasecmp' [-Wincompatible-library-redeclaration]
+char strcasecmp();
+     ^
+configure:8284:6: note: 'strcasecmp' is a builtin with type 'int (const char *, const char *)'
+2 warnings generated.
+configure:8272: checking for strdup
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char strdup();
+           ^
+            void
+configure:8284:6: warning: incompatible redeclaration of library function 'strdup' [-Wincompatible-library-redeclaration]
+char strdup();
+     ^
+configure:8284:6: note: 'strdup' is a builtin with type 'char *(const char *)'
+2 warnings generated.
+configure:8272: checking for strerror
+configure:8272: checking for strstr
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char strstr();
+           ^
+            void
+configure:8284:6: warning: incompatible redeclaration of library function 'strstr' [-Wincompatible-library-redeclaration]
+char strstr();
+     ^
+configure:8284:6: note: 'strstr' is a builtin with type 'char *(const char *, const char *)'
+2 warnings generated.
+configure:8272: checking for strtoq
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char strtoq();
+           ^
+            void
+1 warning generated.
+configure:8272: checking for symlink
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:13: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char symlink();
+            ^
+             void
+1 warning generated.
+configure:8272: checking for sysctl
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char sysctl();
+           ^
+            void
+1 warning generated.
+configure:8272: checking for sysconf
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:13: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char sysconf();
+            ^
+             void
+1 warning generated.
+configure:8272: checking for sysinfo
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:13: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char sysinfo();
+            ^
+             void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_sysinfo", referenced from:
+      _main in conftest-fd050e.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8277 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char sysinfo(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char sysinfo();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_sysinfo) || defined (__stub___sysinfo)
+choke me
+#else
+sysinfo();
+#endif
+
+; return 0; }
+configure:8272: checking for tcgetattr
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:15: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char tcgetattr();
+              ^
+               void
+1 warning generated.
+configure:8272: checking for uname
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:11: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char uname();
+          ^
+           void
+1 warning generated.
+configure:8272: checking for usleep
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char usleep();
+           ^
+            void
+1 warning generated.
+configure:8272: checking for waitpid
+configure:8300: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8284:13: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char waitpid();
+            ^
+             void
+1 warning generated.
+configure:8327: checking for gethostbyaddr_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:21: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char gethostbyaddr_r();
+                    ^
+                     void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_gethostbyaddr_r", referenced from:
+      _main in conftest-44bb47.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8332 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char gethostbyaddr_r(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char gethostbyaddr_r();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_gethostbyaddr_r) || defined (__stub___gethostbyaddr_r)
+choke me
+#else
+gethostbyaddr_r();
+#endif
+
+; return 0; }
+configure:8327: checking for gethostbyname_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:21: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char gethostbyname_r();
+                    ^
+                     void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_gethostbyname_r", referenced from:
+      _main in conftest-40c095.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8332 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char gethostbyname_r(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char gethostbyname_r();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_gethostbyname_r) || defined (__stub___gethostbyname_r)
+choke me
+#else
+gethostbyname_r();
+#endif
+
+; return 0; }
+configure:8327: checking for gethostbyname2_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:22: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char gethostbyname2_r();
+                     ^
+                      void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_gethostbyname2_r", referenced from:
+      _main in conftest-fa921f.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8332 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char gethostbyname2_r(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char gethostbyname2_r();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_gethostbyname2_r) || defined (__stub___gethostbyname2_r)
+choke me
+#else
+gethostbyname2_r();
+#endif
+
+; return 0; }
+configure:8327: checking for getlogin_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:16: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char getlogin_r();
+               ^
+                void
+1 warning generated.
+configure:8327: checking for getpwnam_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:16: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char getpwnam_r();
+               ^
+                void
+1 warning generated.
+configure:8327: checking for _posix_getpwnam_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:23: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char _posix_getpwnam_r();
+                      ^
+                       void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "__posix_getpwnam_r", referenced from:
+      _main in conftest-0e0e4c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8332 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _posix_getpwnam_r(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _posix_getpwnam_r();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__posix_getpwnam_r) || defined (__stub____posix_getpwnam_r)
+choke me
+#else
+_posix_getpwnam_r();
+#endif
+
+; return 0; }
+configure:8327: checking for getpwuid_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:16: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char getpwuid_r();
+               ^
+                void
+1 warning generated.
+configure:8327: checking for _posix_getpwuid_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:23: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char _posix_getpwuid_r();
+                      ^
+                       void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "__posix_getpwuid_r", referenced from:
+      _main in conftest-614478.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8332 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char _posix_getpwuid_r(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char _posix_getpwuid_r();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub__posix_getpwuid_r) || defined (__stub____posix_getpwuid_r)
+choke me
+#else
+_posix_getpwuid_r();
+#endif
+
+; return 0; }
+configure:8327: checking for getservbyname_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:21: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char getservbyname_r();
+                    ^
+                     void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_getservbyname_r", referenced from:
+      _main in conftest-a27e2d.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8332 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char getservbyname_r(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getservbyname_r();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_getservbyname_r) || defined (__stub___getservbyname_r)
+choke me
+#else
+getservbyname_r();
+#endif
+
+; return 0; }
+configure:8327: checking for getservbyport_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:21: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char getservbyport_r();
+                    ^
+                     void
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_getservbyport_r", referenced from:
+      _main in conftest-e1d2ae.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 8332 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char getservbyport_r(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getservbyport_r();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_getservbyport_r) || defined (__stub___getservbyport_r)
+choke me
+#else
+getservbyport_r();
+#endif
+
+; return 0; }
+configure:8327: checking for gmtime_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:14: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char gmtime_r();
+             ^
+              void
+1 warning generated.
+configure:8327: checking for localtime_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:17: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char localtime_r();
+                ^
+                 void
+1 warning generated.
+configure:8327: checking for readdir_r
+configure:8355: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8339:15: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char readdir_r();
+              ^
+               void
+1 warning generated.
+configure:8382: checking for working alloca.h
+configure:8394: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8390:7: warning: unused variable 'p' [-Wunused-variable]
+char *p = alloca(2 * sizeof(int));
+      ^
+1 warning generated.
+configure:8415: checking for alloca
+configure:8448: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8444:7: warning: unused variable 'p' [-Wunused-variable]
+char *p = (char *) alloca(1);
+      ^
+1 warning generated.
+configure:8619: checking for snprintf
+configure:8647: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8631:14: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char snprintf();
+             ^
+              void
+configure:8631:6: warning: incompatible redeclaration of library function 'snprintf' [-Wincompatible-library-redeclaration]
+char snprintf();
+     ^
+configure:8631:6: note: 'snprintf' is a builtin with type 'int (char *, unsigned long, const char *, ...)'
+2 warnings generated.
+configure:8619: checking for vsnprintf
+configure:8647: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8631:15: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char vsnprintf();
+              ^
+               void
+configure:8631:6: warning: incompatible redeclaration of library function 'vsnprintf' [-Wincompatible-library-redeclaration]
+char vsnprintf();
+     ^
+configure:8631:6: note: 'vsnprintf' is a builtin with type 'int (char *, unsigned long, const char *, struct __va_list_tag *)'
+2 warnings generated.
+configure:8675: checking if snprintf works correctly
+configure:8732: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8713:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^
+1 warning generated.
+configure:8763: checking what snprintf() returns
+configure:8806: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:8792:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^
+1 warning generated.
+configure:9304: checking for sigsetjmp and siglongjmp
+configure:9334: gcc -o conftest -D_REENTRANT -O2 -Weverything -Wno-unknown-warning-option -Wno-disabled-macro-expansion -Wno-missing-variable-declarations -Wno-date-time -Wno-format-y2k   conftest.c  1>&5
+configure:9329:2: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        exit(0);
+        ^
+configure:9329:2: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+configure:9331:10: warning: 'return' will never be executed [-Wunreachable-code-return]
+; return 0; }
+         ^
+2 warnings generated.
+configure:9363: checking for long file names
+configure:9407: checking whether make sets ${MAKE}
+configure:9437: checking for gtar
+configure:9476: checking for tar
+configure:9524: checking how to create TAR files
+configure:9582: checking for ranlib
+configure:9612: checking for ar
+configure:9635: checking for pwd
+configure:9678: checking for ccdv
+configure:10171: checking if shell can test for symlinks
+configure:10630: checking CC
+configure:10633: checking CFLAGS
+configure:10636: checking CPPFLAGS
+configure:10639: checking DEFS
+configure:10642: checking NDEFS
+configure:10645: checking LDFLAGS
+configure:10648: checking LIBS

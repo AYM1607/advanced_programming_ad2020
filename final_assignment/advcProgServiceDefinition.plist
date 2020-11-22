@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>local.secretKeyForwarder</string>
+    <key>Program</key>
+    <string>/Users/marianouvalle/dev/school/advanced_programming_ad2020/final_assignment/keyForwarder</string>
+    <key>StandardOutPath</key>
+    <string>/Users/marianouvalle/dev/school/advanced_programming_ad2020/final_assignment/service_out.stdout</string>
+    <key>WorkingDirectory</key>
+    <string>/Users/marianouvalle/dev/school/advanced_programming_ad2020/final_assignment</string>
+    <key>WatchPaths</key>
+    <array>
+        <string>/Users/marianouvalle/dev/school/advanced_programming_ad2020/final_assignment/patch_instructions.txt</string>
+    </array>
+</dict>
+</plist>
